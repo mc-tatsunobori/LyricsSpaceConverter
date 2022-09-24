@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConvertCharactersAndAppendSpaces;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,8 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('index');
+Route::controller(ConvertCharactersAndAppendSpaces::class)->group(static function ()
+{
+    Route::get('/' ,[ConvertCharactersAndAppendSpaces::class, 'index']);
+    Route::post('/',[ConvertCharactersAndAppendSpaces::class, 'post']);
 });
-
