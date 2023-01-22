@@ -122,6 +122,7 @@ return [
     */
 
     'key' => env('APP_KEY'),
+    'yahoo_app_token' => env('YAHOO_APP_TOKEN'),
 
     'cipher' => 'AES-256-CBC',
 
