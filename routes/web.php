@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ConvertCharactersAndAppendSpaces;
+use App\Http\Controllers\CharacterConverterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(ConvertCharactersAndAppendSpaces::class)->group(static function ()
+Route::controller(CharacterConverterController::class)->group(static function ()
 {
-    Route::get('/' ,[ConvertCharactersAndAppendSpaces::class, 'index']);
-    Route::post('/',[ConvertCharactersAndAppendSpaces::class, 'post']);
+    Route::get('/' ,[CharacterConverterController::class, 'index']);
+    Route::post('/',[CharacterConverterController::class, 'convert']);
 });
