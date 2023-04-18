@@ -34,9 +34,6 @@ class CharacterConverterController extends Controller
     {
         $request->validate([
             'target_kanji' => 'required|max:255'
-        ], [], [
-            'target_kanji.required' => '変換対象の文字列を入力してください。',
-            'target_kanji.max' => '変換対象の文字列は:max文字以内で入力してください。',
         ]);
 
         $targetKanji = $request->input('target_kanji');
