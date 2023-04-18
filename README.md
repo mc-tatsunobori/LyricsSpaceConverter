@@ -1,2 +1,2 @@
-# kan_gana_space
+# LyricsSpaceConverter
 * ルートディレクトリで`$ php artisan serve`を実行。
