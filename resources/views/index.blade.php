@@ -9,33 +9,39 @@
 </head>
 <body>
 <div class="container py-5">
-    <h1 class="text-center mb-5 text-primary">LyricsSpaceConverter</h1>
-    <h5 class="text-center mb-3">Muse◯core で連続で歌詞が入力できるようにするツールです。</h5>
-    <h5 class="text-center mb-5">漢字を含む文字を全てひらがなに変えて、1文字ごとにスペースを挟んだ結果を返してくれるよ。</h5>
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
+    <h1 class="text-center mb-5 text-dark">LyricsSpaceConverter</h1>
+    <h5 class="mb-3 text-dark">Muse◯core で連続で歌詞が入力できるようにするツールです。</h5>
+    <h5 class="mb-5 text-dark">漢字を含む文字を全てひらがなに変えて、1文字ごとにスペースを挟んだ結果を返してくれるよ。</h5>
+    <div class="row justify-content-around">
+        <div class="col-lg-5">
             <form method="POST" action="/">
+                <button type="submit" class="btn text-dark pneumophism-el mb-3">
+                    <i class="fa-solid fa-rotate"></i>
+                    変換
+                </button>
                 @csrf
                 <div class="form-group">
-                    <label for="target_kanji" class="form-label h4">変換したい漢字を含む歌詞を入力してね</label>
-                    <textarea name="target_kanji" class="form-control" rows="6"
+                    <textarea name="target_kanji" class="form-control custom-textarea pneumophism-el border-0" rows="6"
+                              placeholder="変換したい漢字を含む歌詞を入力してね"
                               required>{{ $request ?? old('target_kanji') }}</textarea>
                     @error('target_kanji')
                     <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary btn-block mt-4">変換</button>
             </form>
         </div>
-    </div>
-    @isset($response)
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-8">
-                <label for="result" class="form-label h4">出力結果</label>
-                <textarea class="form-control" name="result" disabled readonly rows="6">{{ $response }}</textarea>
-            </div>
+        <div class="col-lg-1 d-flex justify-content-center align-items-center">
+            <i class="fa-solid fa-arrow-right fa-2xl mt-3"></i>
         </div>
-    @endisset
+        <div class="col-lg-5">
+            <button type="submit" class="btn text-dark pneumophism-el mb-3">
+                <i class="fa-regular fa-clipboard"></i>
+                コピー
+            </button>
+            <textarea class="form-control custom-textarea pneumophism-el border-0" name="result" disabled readonly
+                      rows="6">{{ $response ?? null }}</textarea>
+        </div>
+    </div>
 </div>
 </body>
 </html>

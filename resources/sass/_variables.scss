@@ -1,7 +1,15 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #FAF8F7;
+$input-disabled-bg: #FAF8F7;
+$dark: #271D37;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Robot', 'YuGothic', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+.pneumophism-el {
+    box-shadow:
+        10px 10px 10px #C9C9C9,
+        -10px -10px 10px #FFFFFF;
+}
