@@ -34,14 +34,15 @@
             <i class="fa-solid fa-arrow-right fa-2xl mt-3"></i>
         </div>
         <div class="col-lg-5">
-            <button type="submit" class="btn text-dark pneumophism-el mb-3">
+            <button id="copyButton" type="submit" class="btn text-dark pneumophism-el mb-3">
                 <i class="fa-regular fa-clipboard"></i>
                 コピー
             </button>
-            <textarea class="form-control custom-textarea pneumophism-el border-0" name="result" disabled readonly
+            <textarea id="resultTextarea" class="form-control custom-textarea pneumophism-el border-0" name="result" disabled readonly
                       rows="6">{{ $response ?? null }}</textarea>
         </div>
     </div>
 </div>
+<script src="{{ asset('js/copy-text.js') }}"></script>
 </body>
 </html>
